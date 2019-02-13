@@ -17,7 +17,7 @@ class Cocktail extends Component {
     }
 
     let classes = "card";
-    if (this.props.cocktail === this.props.cocktailFromParams) {
+    if (this.props.cocktail.id === this.props.selectedCocktail.id) {
       classes += " selected";
     }
 
@@ -26,6 +26,7 @@ class Cocktail extends Component {
         <div className="card-description">
           <h2>{this.props.cocktail.name}</h2>
         </div>
+        <a className="card-user"><i className="fas fa-heart"></i></a>
       </div>
     );
   }
@@ -40,6 +41,7 @@ function mapDispatchToProps(dispatch) {
 
 function mapStateToProps(state) {
   return {
+    selectedCocktail: state.selectedCocktail
   }
 }
 
