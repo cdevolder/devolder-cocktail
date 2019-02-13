@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import { setReviews } from '../actions';
 
 import Review from '../containers/review';
+import ReviewForm from '../containers/review_form';
 
 class ReviewsList extends Component {
 
@@ -15,6 +16,7 @@ class ReviewsList extends Component {
 
     return (
       <div className="review-container">
+        <ReviewForm />
         {this.props.reviews.map((review) => <Review review={review} key={review.id} />)}
       </div>
     );

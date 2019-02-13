@@ -48,38 +48,32 @@ c8=Cocktail.create!(
   user_id: user.id
 )
 
-review=Review.create!(
-  title: 'Awesome drink',
+Review.create!(
   content: 'Really enjoyed drinking this cocktail in the pool on holiday!',
   cocktail_id: c1.id,
   user_id: user.id
 )
-review=Review.create!(
-  title: 'Discusting drink',
+Review.create!(
   content: 'That is really a bad cocktail!',
   cocktail_id: c1.id,
   user_id: user.id
 )
-review=Review.create!(
-  title: 'Very good',
+Review.create!(
   content: 'Really enjoyed drinking this cocktail in the pool on holiday!',
   cocktail_id: c1.id,
   user_id: user.id
 )
-review=Review.create!(
-  title: 'Oh yeah',
+Review.create!(
   content: 'That is really a great cocktail!',
   cocktail_id: c1.id,
   user_id: user.id
 )
-review=Review.create!(
-  title: 'Awesome beverage',
+Review.create!(
   content: 'Really enjoyed drinking this cocktail on holiday!',
   cocktail_id: c1.id,
   user_id: user.id
 )
-review=Review.create!(
-  title: 'Not bad',
+Review.create!(
   content: 'Can be more original!',
   cocktail_id: c1.id,
   user_id: user.id
