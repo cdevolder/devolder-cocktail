@@ -3,6 +3,8 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { selectCocktail } from '../actions';
 
+import ReviewForm from '../containers/review_form';
+
 class SelectedCocktail extends Component {
 
   render () {
@@ -11,11 +13,14 @@ class SelectedCocktail extends Component {
         backgroundImage: `linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://res.cloudinary.com/cdevolder/image/upload/v1549983412/pinacolada_tfqjro.jpg')`
       }
       return (
-        <div className='card' style={style}>
-          <div className="card-description">
-            <h2>{this.props.selectedCocktail.name}</h2>
-            <p>{this.props.selectedCocktail.description}</p>
+        <div>
+          <div className='card' style={style}>
+            <div className="card-description">
+              <h2>{this.props.selectedCocktail.name}</h2>
+              <p>{this.props.selectedCocktail.description}</p>
+            </div>
           </div>
+          <ReviewForm />
         </div>
       );
     }
