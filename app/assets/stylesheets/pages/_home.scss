@@ -1,4 +1,5 @@
 body {
+  height: 100vh;
   background-color: #34495e;
 }
 
@@ -15,6 +16,8 @@ body {
 }
 
 .cocktail-list {
+  height: calc(100vh - 70px);
+  overflow: auto;
   width: 40%;
   display: flex;
   flex-wrap: wrap;
@@ -30,19 +33,19 @@ body {
   }
 }
 
-.cocktail-container {
-  margin: 10px;
-  top: 80px;
+.right-container {
+  overflow: hidden !important;
   width: 60%;
-  height: calc(100vh - 90px);
-  position: sticky !important;
+  height: calc(100vh - 70px);
+  position: relative;
   .card {
     height: calc(50vh);
   }
-  .message-box {
+  .review-container {
     text-align: center;
-    padding-top: 25vh;
     color: #fff;
+    height: calc(50vh - 70px);
+    overflow: auto;
   }
 }
 

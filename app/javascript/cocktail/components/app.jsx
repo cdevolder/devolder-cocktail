@@ -7,7 +7,7 @@ const App = (props) => {
   return (
     <div>
       <CocktailsList />
-      <div className="cocktail-container">
+      <div className="right-container">
         <SelectedCocktail />
         <ReviewsList />
       </div>

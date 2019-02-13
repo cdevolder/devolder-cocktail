@@ -60,3 +60,27 @@ review=Review.create!(
   cocktail_id: c1.id,
   user_id: user.id
 )
+review=Review.create!(
+  title: 'Very good',
+  content: 'Really enjoyed drinking this cocktail in the pool on holiday!',
+  cocktail_id: c1.id,
+  user_id: user.id
+)
+review=Review.create!(
+  title: 'Oh yeah',
+  content: 'That is really a great cocktail!',
+  cocktail_id: c1.id,
+  user_id: user.id
+)
+review=Review.create!(
+  title: 'Awesome beverage',
+  content: 'Really enjoyed drinking this cocktail on holiday!',
+  cocktail_id: c1.id,
+  user_id: user.id
+)
+review=Review.create!(
+  title: 'Not bad',
+  content: 'Can be more original!',
+  cocktail_id: c1.id,
+  user_id: user.id
+)

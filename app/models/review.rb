@@ -10,8 +10,8 @@ class Review < ApplicationRecord
       id: id,
       title: title,
       content: content,
-      created_at: created_at,
-      user_id: self.user.id
+      created_at: created_at.to_date,
+      user_email: self.user.email
     }
   end
 end
