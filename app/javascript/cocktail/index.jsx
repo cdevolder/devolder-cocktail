@@ -9,19 +9,22 @@ import App from './components/app'
 import cocktailsReducer from './reducers/cocktails_reducer'
 import selectedCocktailReducer from './reducers/selected_cocktail_reducer'
 import reviewsReducer from './reducers/reviews_reducer'
+import likesReducer from './reducers/likes_reducer'
 
 const cocktailIndex = document.getElementById('cocktail-index');
 const firstCocktail = JSON.parse(cocktailIndex.dataset.cocktail)
 const initialState = {
   cocktails: [],
   selectedCocktail: firstCocktail,
-  reviews: []
+  reviews: [],
+  likes: []
 };
 
 const reducers = combineReducers ({
   cocktails: cocktailsReducer,
   selectedCocktail: selectedCocktailReducer,
-  reviews: reviewsReducer
+  reviews: reviewsReducer,
+  likes: likesReducer
 });
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;

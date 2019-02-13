@@ -47,7 +47,7 @@ function mapDispatchToProps(dispatch) {
 
 function mapStateToProps(state) {
   return {
-    selectedCocktail: state.selectedCocktail,
+    selectedCocktail: state.selectedCocktail
   }
 }
 

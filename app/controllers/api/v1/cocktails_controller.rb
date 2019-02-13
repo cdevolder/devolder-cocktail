@@ -17,4 +17,7 @@ class Api::V1::CocktailsController < ApplicationController
 
   def destroy
   end
+
+  def like 
+  end
 end

@@ -6,4 +6,5 @@ class User < ApplicationRecord
 
   has_many :cocktails
   has_many :reviews
+  has_many :likes
 end

@@ -1,6 +1,7 @@
 class Cocktail < ApplicationRecord
   belongs_to :user
   has_many :reviews
+  has_many :likes
 
   validates :name, presence: true, uniqueness: true
   validates :description, presence: true

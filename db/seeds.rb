@@ -78,3 +78,10 @@ Review.create!(
   cocktail_id: c1.id,
   user_id: user.id
 )
+
+
+Like.create!(
+  status: true,
+  cocktail_id: c1.id,
+  user_id: user.id
+)

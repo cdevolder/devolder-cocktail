@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { setCocktails } from '../actions';
+import { setLikes } from '../actions';
 
 import Cocktail from '../containers/cocktail';
 
@@ -9,6 +10,7 @@ class CocktailsList extends Component {
 
   componentWillMount() {
     this.props.setCocktails();
+    this.props.setLikes();
   }
 
   render () {
@@ -22,7 +24,7 @@ class CocktailsList extends Component {
 
 function mapDispatchToProps(dispatch) {
   return bindActionCreators(
-    { setCocktails: setCocktails },
+    { setCocktails: setCocktails, setLikes },
     dispatch
   )
 }

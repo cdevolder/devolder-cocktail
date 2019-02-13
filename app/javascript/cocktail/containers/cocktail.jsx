@@ -3,12 +3,18 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { selectCocktail } from '../actions';
 import { setReviews } from '../actions';
+import { likeCocktail } from '../actions';
 
 class Cocktail extends Component {
 
-  handleClick = () => {
+  handleSelect = () => {
     this.props.selectCocktail(this.props.cocktail.id);
     this.props.setReviews(this.props.cocktail.id);
+  }
+
+  handleLike = (event) => {
+    event.stopPropagation();
+    this.props.likeCocktail(this.props.cocktail.id);
   }
 
   render () {
@@ -16,17 +22,25 @@ class Cocktail extends Component {
       backgroundImage: `linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('${this.props.cocktail.imageUrl}')`
     }
 
-    let classes = "card";
+    let card_classes = "card";
     if (this.props.cocktail.id === this.props.selectedCocktail.id) {
-      classes += " selected";
+      card_classes += " active";
     }
 
+    let icon_classes = "like-btn btn fas fa-heart"
+    if (this.props.likes.includes(this.props.cocktail.id)) {
+      icon_classes += " active";
+    }
+
+    const id_button = `like${this.props.cocktail.id}`
+
     return (
-      <div className={classes} style={style} onClick={this.handleClick}>
+      <div className={card_classes} style={style} onClick={this.handleSelect}>
         <div className="card-description">
           <h2>{this.props.cocktail.name}</h2>
+          <h2>{this.props.likes}</h2>
         </div>
-        <a className="card-user"><i className="fas fa-heart"></i></a>
+        <i id={id_button} className={icon_classes} onClick={this.handleLike}></i>
       </div>
     );
   }
@@ -34,14 +48,15 @@ class Cocktail extends Component {
 
 function mapDispatchToProps(dispatch) {
   return bindActionCreators(
-    { selectCocktail, setReviews },
+    { selectCocktail, setReviews, likeCocktail },
     dispatch
   )
 }
 
 function mapStateToProps(state) {
   return {
-    selectedCocktail: state.selectedCocktail
+    selectedCocktail: state.selectedCocktail,
+    likes: state.likes
   }
 }
 
