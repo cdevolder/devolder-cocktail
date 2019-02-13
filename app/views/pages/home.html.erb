@@ -1,4 +1,4 @@
-<div id="cocktail-index"></div>
+<div id="cocktail-index" data-cocktail="<%= @first_cocktail.to_json %>"</div>
 
 <% content_for :after_js do %>
   <%= javascript_pack_tag "cocktail" %>

@@ -1,14 +1,15 @@
 import React, { Component } from 'react';
-import CocktailList from '../containers/cocktail_list'
-import Map from '../containers/map'
+import CocktailsList from '../containers/cocktails_list'
 import SelectedCocktail from '../containers/selected_cocktail'
+import ReviewsList from '../containers/reviews_list'
 
 const App = (props) => {
   return (
     <div>
-      <CocktailList />
+      <CocktailsList />
       <div className="cocktail-container">
         <SelectedCocktail />
+        <ReviewsList />
       </div>
     </div>
   );

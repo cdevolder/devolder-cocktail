@@ -31,16 +31,17 @@ body {
 }
 
 .cocktail-container {
-  top: 70px;
+  margin: 10px;
+  top: 80px;
   width: 60%;
-  height: calc(100vh - 70px);
-  position: sticky !important; /* !important to override Gmaps inline CSS */
+  height: calc(100vh - 90px);
+  position: sticky !important;
   .card {
     height: calc(50vh);
   }
   .message-box {
     text-align: center;
-    margin-top: 25vh;
+    padding-top: 25vh;
     color: #fff;
   }
 }

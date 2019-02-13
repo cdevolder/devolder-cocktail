@@ -1,3 +1,4 @@
+Review.destroy_all
 Cocktail.destroy_all
 User.destroy_all
 
@@ -44,5 +45,18 @@ c7=Cocktail.create!(
 c8=Cocktail.create!(
   name: 'Sex on the beach',
   description: "Le Sex on the beach est un cocktail alcoolisé créé par le T.G.I. Friday's.",
+  user_id: user.id
+)
+
+review=Review.create!(
+  title: 'Awesome drink',
+  content: 'Really enjoyed drinking this cocktail in the pool on holiday!',
+  cocktail_id: c1.id,
+  user_id: user.id
+)
+review=Review.create!(
+  title: 'Discusting drink',
+  content: 'That is really a bad cocktail!',
+  cocktail_id: c1.id,
   user_id: user.id
 )

@@ -1,8 +1,9 @@
 class Cocktail < ApplicationRecord
   belongs_to :user
+  has_many :reviews
 
   validates :name, presence: true, uniqueness: true
-  validates :name, presence: true
+  validates :description, presence: true
 
   def as_json(options = {})
     {
@@ -10,7 +11,7 @@ class Cocktail < ApplicationRecord
       name: name,
       description: description,
       created_at: created_at,
-      user_id: Cocktail.find(id).user.id
+      user_id: self.user.id
     }
   end
 end

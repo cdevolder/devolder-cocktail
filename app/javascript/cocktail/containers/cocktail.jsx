@@ -2,11 +2,13 @@ import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { selectCocktail } from '../actions';
+import { setReviews } from '../actions';
 
 class Cocktail extends Component {
 
   handleClick = () => {
     this.props.selectCocktail(this.props.cocktail.id);
+    this.props.setReviews(this.props.cocktail.id);
   }
 
   render () {
@@ -31,7 +33,7 @@ class Cocktail extends Component {
 
 function mapDispatchToProps(dispatch) {
   return bindActionCreators(
-    { selectCocktail },
+    { selectCocktail, setReviews },
     dispatch
   )
 }

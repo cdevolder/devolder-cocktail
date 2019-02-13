@@ -5,7 +5,7 @@ import { setCocktails } from '../actions';
 
 import Cocktail from '../containers/cocktail';
 
-class CocktailList extends Component {
+class CocktailsList extends Component {
 
   componentWillMount() {
     this.props.setCocktails();
@@ -33,4 +33,4 @@ function mapStateToProps(state) {
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(CocktailList);
+export default connect(mapStateToProps, mapDispatchToProps)(CocktailsList);
