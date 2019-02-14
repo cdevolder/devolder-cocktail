@@ -9,7 +9,9 @@ class Review < ApplicationRecord
       id: id,
       content: content,
       created_at: created_at.to_date,
-      user_email: self.user.email
+      user_email: self.user.email,
+      user_id: self.user.id,
+      cocktail_id: self.cocktail_id
     }
   end
 end

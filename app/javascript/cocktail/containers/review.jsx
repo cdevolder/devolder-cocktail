@@ -1,10 +1,22 @@
 import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
+import { deleteReview } from '../actions';
 
 class Review extends Component {
 
+  handleDelete = (event) => {
+    event.stopPropagation();
+    this.props.deleteReview(this.props.review.cocktail_id, this.props.review.id);
+  }
+
   render () {
+
+    const idTrash = `delete${this.props.review.id}`
+    let trashClasses = "delete-btn btn fas fa-trash";
+    if (this.props.review.user_id === this.props.user.id) {
+      trashClasses += " visible";
+    }
 
     return (
       <div className="review">
@@ -20,8 +32,7 @@ class Review extends Component {
         </div>
         <div className="review-status">
           <ul className="list-inline product-controls">
-            <li><a href=""><i className="fas fa-heart"></i></a></li>
-            <li><a href=""><i className="fas fa-trash"></i></a></li>
+            <i id={idTrash} className={trashClasses} onClick={this.handleDelete}></i>
           </ul>
         </div>
       </div>
@@ -31,10 +42,15 @@ class Review extends Component {
 
 function mapDispatchToProps(dispatch) {
   return bindActionCreators(
-    {  },
+    { deleteReview },
     dispatch
   )
 }
 
+function mapStateToProps(state) {
+  return {
+    user: state.user
+  }
+}
 
-export default connect(null, mapDispatchToProps)(Review);
+export default connect(mapStateToProps, mapDispatchToProps)(Review);

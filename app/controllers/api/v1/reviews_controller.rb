@@ -17,6 +17,12 @@ class Api::V1::ReviewsController < ApplicationController
   end
 
   def destroy
+    id = params[:id]
+    review_to_delete = Review.find(id)
+    review_to_delete.delete
+
+    reviews = @cocktail.reviews.order('created_at DESC')
+    render json: id
   end
 
   private

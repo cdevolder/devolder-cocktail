@@ -47,18 +47,3 @@
 .card-link:hover {
   opacity: 0.1;
 }
-
-.like-btn {
-  color: #ffffff;
-  background-color: transparent;
-  position: absolute;
-  right: 10px;
-  top: 10px;
-  &:hover {
-    color: #ffffff;
-  }
-  &.active {
-  color: #ff6348;
-  box-shadow: none;
-  }
-}

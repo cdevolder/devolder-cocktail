@@ -13,7 +13,11 @@ import likesReducer from './reducers/likes_reducer'
 
 const cocktailIndex = document.getElementById('cocktail-index');
 const firstCocktail = JSON.parse(cocktailIndex.dataset.cocktail)
+const currentUser = JSON.parse(cocktailIndex.dataset.user)
+const identityReducer = (state = null) => state;
+
 const initialState = {
+  user: currentUser,
   cocktails: [],
   selectedCocktail: firstCocktail,
   reviews: [],
@@ -21,6 +25,7 @@ const initialState = {
 };
 
 const reducers = combineReducers ({
+  user: identityReducer,
   cocktails: cocktailsReducer,
   selectedCocktail: selectedCocktailReducer,
   reviews: reviewsReducer,

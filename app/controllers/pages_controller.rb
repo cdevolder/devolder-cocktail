@@ -3,5 +3,6 @@ class PagesController < ApplicationController
 
   def home
     @first_cocktail = Cocktail.first
+    @user = current_user
   end
 end

@@ -22,25 +22,24 @@ class Cocktail extends Component {
       backgroundImage: `linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('${this.props.cocktail.imageUrl}')`
     }
 
-    let card_classes = "card";
+    let cardClasses = "card";
     if (this.props.cocktail.id === this.props.selectedCocktail.id) {
-      card_classes += " active";
+      cardClasses += " active";
     }
 
-    let icon_classes = "like-btn btn fas fa-heart"
+    let iconClasses = "like-btn btn fas fa-heart"
     if (this.props.likes.includes(this.props.cocktail.id)) {
-      icon_classes += " active";
+      iconClasses += " active";
     }
 
-    const id_button = `like${this.props.cocktail.id}`
+    const idButton = `like${this.props.cocktail.id}`
 
     return (
-      <div className={card_classes} style={style} onClick={this.handleSelect}>
+      <div className={cardClasses} style={style} onClick={this.handleSelect}>
         <div className="card-description">
           <h2>{this.props.cocktail.name}</h2>
-          <h2>{this.props.likes}</h2>
         </div>
-        <i id={id_button} className={icon_classes} onClick={this.handleLike}></i>
+        <i id={idButton} className={iconClasses} onClick={this.handleLike}></i>
       </div>
     );
   }
