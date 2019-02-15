@@ -1,6 +1,7 @@
 class Api::V1::CocktailsController < ApplicationController
+
   def index
-    cocktails = Cocktail.all
+    cocktails = Cocktail.order('created_at DESC')
     render json: cocktails
   end
 
@@ -13,11 +14,22 @@ class Api::V1::CocktailsController < ApplicationController
   end
 
   def update
+    cocktail = Cocktail.find(params[:cocktail])
+    if Like.where(cocktail_id: cocktail.id, user_id: current_user.id) != []
+      cocktail.amount_of_likes -= 1
+    else
+      cocktail.amount_of_likes += 1
+    end
+    cocktail.save
+    cocktails = Cocktail.order('created_at DESC')
+    render json: cocktails
   end
 
   def destroy
   end
 
-  def like 
+  private
+
+  def set_cocktail
   end
 end

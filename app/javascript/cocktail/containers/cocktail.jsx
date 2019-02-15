@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import { selectCocktail } from '../actions';
 import { setReviews } from '../actions';
 import { likeCocktail } from '../actions';
+import { handleLike } from '../actions';
 
 class Cocktail extends Component {
 
@@ -15,6 +16,7 @@ class Cocktail extends Component {
   handleLike = (event) => {
     event.stopPropagation();
     this.props.likeCocktail(this.props.cocktail.id);
+    this.props.handleLike(this.props.cocktail.id);
   }
 
   render () {
@@ -38,6 +40,7 @@ class Cocktail extends Component {
       <div className={cardClasses} style={style} onClick={this.handleSelect}>
         <div className="card-description">
           <h2>{this.props.cocktail.name}</h2>
+          <p>{this.props.cocktail.amount_of_likes} likes</p>
         </div>
         <i id={idButton} className={iconClasses} onClick={this.handleLike}></i>
       </div>
@@ -47,7 +50,7 @@ class Cocktail extends Component {
 
 function mapDispatchToProps(dispatch) {
   return bindActionCreators(
-    { selectCocktail, setReviews, likeCocktail },
+    { selectCocktail, setReviews, likeCocktail, handleLike },
     dispatch
   )
 }

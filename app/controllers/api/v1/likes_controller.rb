@@ -5,16 +5,16 @@ class Api::V1::LikesController < ApplicationController
   end
 
   def create
-    cocktail = params[:cocktail]
+    cocktail_id = params[:cocktail]
     user = current_user
-    like = Like.where(cocktail_id: cocktail, user_id: user.id).last
+    like = Like.where(cocktail_id: cocktail_id, user_id: user.id).last
     if like
       like.delete
       likes = user.likes.map {|e| e.cocktail_id}
       render json: likes
     else
       new_like = Like.create!(
-        cocktail_id: cocktail,
+        cocktail_id: cocktail_id,
         user_id: user.id
       )
       new_like.save

@@ -4,6 +4,7 @@ export const SET_REVIEWS = 'SET_REVIEWS';
 export const CREATE_REVIEW = 'CREATE_REVIEW';
 export const SET_LIKES = 'SET_LIKES';
 export const CREATE_LIKE = 'CREATE_LIKE';
+export const HANDLE_LIKE = 'HANDLE_LIKE';
 export const DELETE_REVIEW = 'DELETE_REVIEW';
 
 const BASE_URL = '/api/v1';
@@ -84,6 +85,27 @@ export function likeCocktail(cocktail) {
 
   return {
     type: CREATE_LIKE,
+    payload: promise
+  };
+}
+
+export function handleLike(cocktail) {
+  const url = `${BASE_URL}/cocktails/${cocktail}`;
+  const body = { cocktail };
+  const csrfToken = document.querySelector('meta[name="csrf-token"]').attributes.content.value;
+  const promise = fetch(url, {
+    method: 'PATCH',
+    headers: {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json',
+      'X-CSRF-Token': csrfToken
+    },
+    credentials: 'same-origin',
+    body: JSON.stringify(body)
+  }).then(r => r.json());
+
+  return {
+    type: HANDLE_LIKE,
     payload: promise
   };
 }
