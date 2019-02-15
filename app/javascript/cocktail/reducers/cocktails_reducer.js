@@ -1,4 +1,4 @@
-import { SET_COCKTAILS, HANDLE_LIKE } from '../actions';
+import { SET_COCKTAILS, HANDLE_LIKE } from '../actions/cocktail_actions';
 
 export default function(state=[], action) {
   switch (action.type) {

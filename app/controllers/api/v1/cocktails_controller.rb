@@ -16,7 +16,9 @@ class Api::V1::CocktailsController < ApplicationController
   def update
     cocktail = Cocktail.find(params[:cocktail])
     if Like.where(cocktail_id: cocktail.id, user_id: current_user.id) != []
-      cocktail.amount_of_likes -= 1
+      if cocktail.amount_of_likes > 0
+        cocktail.amount_of_likes -= 1
+      end
     else
       cocktail.amount_of_likes += 1
     end

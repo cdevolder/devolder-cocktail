@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import { createReview } from '../actions/index';
+import { createReview } from '../actions/review_actions';
 
 class ReviewForm extends Component {
   constructor(props) {

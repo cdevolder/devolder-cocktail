@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import { deleteReview } from '../actions';
+import { deleteReview } from '../actions/review_actions';
 
 class Review extends Component {
 

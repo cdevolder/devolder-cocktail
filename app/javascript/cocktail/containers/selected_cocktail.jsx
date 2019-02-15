@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import { selectCocktail } from '../actions';
+import { selectCocktail } from '../actions/cocktail_actions';
 
 import ReviewForm from '../containers/review_form';
 

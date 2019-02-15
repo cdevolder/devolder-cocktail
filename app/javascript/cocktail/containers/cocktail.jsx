@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import { selectCocktail } from '../actions';
-import { setReviews } from '../actions';
-import { likeCocktail } from '../actions';
-import { handleLike } from '../actions';
+import { selectCocktail, handleLike } from '../actions/cocktail_actions';
+import { setReviews } from '../actions/review_actions';
+import { likeCocktail } from '../actions/like_actions';
 
 class Cocktail extends Component {
 

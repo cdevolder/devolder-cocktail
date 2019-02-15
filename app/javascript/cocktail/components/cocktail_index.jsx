@@ -3,7 +3,7 @@ import CocktailsList from '../containers/cocktails_list'
 import SelectedCocktail from '../containers/selected_cocktail'
 import ReviewsList from '../containers/reviews_list'
 
-const App = (props) => {
+const CocktailIndex = (props) => {
   return (
     <div>
       <CocktailsList />
@@ -15,4 +15,4 @@ const App = (props) => {
   );
 }
 
-export default App;
+export default CocktailIndex;

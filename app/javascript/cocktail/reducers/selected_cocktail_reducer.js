@@ -1,4 +1,4 @@
-import { SELECT_COCKTAIL } from '../actions';
+import { SELECT_COCKTAIL } from '../actions/cocktail_actions';
 
 export default function(state = null, action) {
   switch (action.type) {

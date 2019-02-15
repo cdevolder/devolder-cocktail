@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import { setReviews } from '../actions';
+import { setReviews } from '../actions/review_actions';
 
 import Review from '../containers/review';
 

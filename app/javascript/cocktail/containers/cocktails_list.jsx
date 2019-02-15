@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import { setCocktails } from '../actions';
-import { setLikes } from '../actions';
+import { setCocktails } from '../actions/cocktail_actions';
+import { setLikes } from '../actions/like_actions';
 
 import Cocktail from '../containers/cocktail';
 

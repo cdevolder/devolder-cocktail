@@ -5,7 +5,7 @@ import reduxPromise from 'redux-promise';
 import { createStore, combineReducers, applyMiddleware, compose } from 'redux';
 import { logger } from 'redux-logger';
 
-import App from './components/app'
+import CocktailIndex from './components/cocktail_index'
 import cocktailsReducer from './reducers/cocktails_reducer'
 import selectedCocktailReducer from './reducers/selected_cocktail_reducer'
 import reviewsReducer from './reducers/reviews_reducer'
@@ -39,7 +39,7 @@ const store = createStore(reducers, initialState, middlewares)
 
 ReactDOM.render(
   <Provider store={store}>
-    <App />
+    <CocktailIndex />
   </Provider>,
   cocktailIndex
 );

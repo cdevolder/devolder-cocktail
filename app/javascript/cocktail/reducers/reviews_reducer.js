@@ -1,4 +1,4 @@
-import { SET_REVIEWS, CREATE_REVIEW, DELETE_REVIEW } from '../actions';
+import { SET_REVIEWS, CREATE_REVIEW, DELETE_REVIEW } from '../actions/review_actions';
 
 export default function(state=[], action) {
   switch (action.type) {

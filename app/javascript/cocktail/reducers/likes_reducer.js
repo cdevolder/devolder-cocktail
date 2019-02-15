@@ -1,5 +1,4 @@
-import { SET_LIKES } from '../actions';
-import { CREATE_LIKE } from '../actions';
+import { SET_LIKES, CREATE_LIKE } from '../actions/like_actions';
 
 export default function(state=[], action) {
   switch (action.type) {
