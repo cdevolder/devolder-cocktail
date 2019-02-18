@@ -7,6 +7,14 @@ import { setLikes } from '../actions/like_actions';
 import Cocktail from '../containers/cocktail';
 
 class CocktailsList extends Component {
+  constructor(props) {
+    super(props);
+    this.state = { search: '' };
+  }
+
+  handleChange = (event) => {
+    this.setState({ search: event.target.value.toLowerCase() });
+  }
 
   componentWillMount() {
     this.props.setCocktails();
@@ -14,9 +22,25 @@ class CocktailsList extends Component {
   }
 
   render () {
+    let filteredCocktails = this.props.cocktails.filter(
+      (cocktail) => {
+        console.log(this.state.search)
+        return cocktail.name.toLowerCase().indexOf(this.state.search) !== -1
+      }
+    );
+
     return (
       <div className="cocktail-list">
-        {this.props.cocktails.map((cocktail) => <Cocktail cocktail={cocktail} key={cocktail.id} />)}
+        <input
+          ref={(input) => { this.messageBox = input; }}
+          type="text"
+          autoComplete="off"
+          value={this.state.search}
+          onChange={this.handleChange}
+          placeholder="Search cocktail..."
+          className="form-control review-input"
+        />
+        {filteredCocktails.map((cocktail) => <Cocktail cocktail={cocktail} key={cocktail.id} />)}
       </div>
     );
   }
@@ -31,7 +55,7 @@ function mapDispatchToProps(dispatch) {
 
 function mapStateToProps(state) {
   return {
-    cocktails: state.cocktails,
+    cocktails: state.cocktails
   }
 }
 
