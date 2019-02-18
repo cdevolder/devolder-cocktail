@@ -21,6 +21,7 @@ body {
   width: 40%;
   flex-wrap: wrap;
   justify-content: flex-start;
+  margin-top: 40px;
   .card {
     display: inline-flex;
     height: 230px;
@@ -58,4 +59,9 @@ body {
   position: relative;
   top: 100px;
   color: #ffffff;
+}
+
+.search-form {
+  position: fixed;
+  top:70px;
 }

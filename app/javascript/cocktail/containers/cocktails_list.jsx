@@ -38,7 +38,7 @@ class CocktailsList extends Component {
           value={this.state.search}
           onChange={this.handleChange}
           placeholder="Search cocktail..."
-          className="form-control review-input"
+          className="form-control search-form"
         />
         {filteredCocktails.map((cocktail) => <Cocktail cocktail={cocktail} key={cocktail.id} />)}
       </div>
