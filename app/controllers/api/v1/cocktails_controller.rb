@@ -10,9 +10,6 @@ class Api::V1::CocktailsController < ApplicationController
     render json: cocktail
   end
 
-  def create
-  end
-
   def update
     cocktail = Cocktail.find(params[:cocktail])
     if Like.where(cocktail_id: cocktail.id, user_id: current_user.id) != []
@@ -25,13 +22,5 @@ class Api::V1::CocktailsController < ApplicationController
     cocktail.save
     cocktails = Cocktail.order('created_at DESC')
     render json: cocktails
-  end
-
-  def destroy
-  end
-
-  private
-
-  def set_cocktail
   end
 end

@@ -12,8 +12,9 @@ class Cocktail < ApplicationRecord
       name: name,
       description: description,
       created_at: created_at,
-      user_id: self.user.id,
-      amount_of_likes: amount_of_likes
+      amount_of_likes: amount_of_likes,
+      imageUrl: image_url,
+      user_id: self.user.id
     }
   end
 end

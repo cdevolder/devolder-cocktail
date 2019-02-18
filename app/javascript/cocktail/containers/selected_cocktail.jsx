@@ -10,7 +10,7 @@ class SelectedCocktail extends Component {
   render () {
     if (this.props.selectedCocktail) {
       const style = {
-        backgroundImage: `linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://res.cloudinary.com/cdevolder/image/upload/v1549983412/pinacolada_tfqjro.jpg')`
+        backgroundImage: `linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('${this.props.selectedCocktail.imageUrl}')`
       }
       return (
         <div>
