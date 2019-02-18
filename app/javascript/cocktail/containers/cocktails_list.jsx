@@ -24,7 +24,6 @@ class CocktailsList extends Component {
   render () {
     let filteredCocktails = this.props.cocktails.filter(
       (cocktail) => {
-        console.log(this.state.search)
         return cocktail.name.toLowerCase().indexOf(this.state.search) !== -1
       }
     );

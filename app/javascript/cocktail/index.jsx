@@ -33,7 +33,7 @@ const reducers = combineReducers ({
 });
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
-const middlewares = composeEnhancers(applyMiddleware(reduxPromise, logger));
+const middlewares = composeEnhancers(applyMiddleware(reduxPromise));
 const store = createStore(reducers, initialState, middlewares)
 
 
