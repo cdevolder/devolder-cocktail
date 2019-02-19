@@ -1,4 +1,5 @@
 class Api::V1::CocktailsController < ApplicationController
+  skip_before_action :authenticate_user!, only: [:index]
 
   def index
     cocktails = Cocktail.order('created_at DESC')
